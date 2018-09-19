@@ -1,0 +1,33 @@
+<Restaurant>
+    <Menu>
+        <Category Name="Appetizers">
+            <Recipe Name="Garlic Bread" Price="4.5" Description=""/>
+            <Recipe Name="Cheese Bread" Price="6.5" Description=""/>
+            <Recipe Name="French Fries" Price="3.5" Description=""/>
+            <Recipe Name="Mini Ravioli" Price="7" Description=""/>
+            <Recipe Name="Jalapeno Poppers" Price="7" Description="With mildly hot Raspberry Sauce."/>
+            <Recipe Name="Onion Rings" Price="6" Description=""/>
+            <Recipe Name="Cheese Curds" Price="6" Description=""/>
+            <Recipe Name="Fresh Spinach Dip" Price="6" Description=""/>
+            <Recipe Name="Mozzarella Sticks" Price="6.5" Description="With our homemade Marinara."/>
+            <Recipe Name="Chicken Strips" Price="7.5" Description="Honey Mustard &amp; BBQ Sauce"/>
+            <Recipe Name="Mini Tacos" Price="7.5" Description="Honey Mustard &amp; BBQ Sauce"/>
+            <Recipe Name="Chicken Wings (Honey or Hot)" Price="7.5" Description="with a side of Ranch dressing."/>
+            <Recipe Name="Bruschetta" Price="8" Description="Lightly toasted hoagie bun. Half with Basil Pesto (Pine Nuts) and other half with Sweet Red Pepper Pesto. Topped with Fresh Tomato and Crumbled Feta. Side of our homemade (Tzatziki) Gyro Sauce."/>
+        </Category>
+        <Category Name="Salads">
+            <Recipe Name="Tossed Salad" Price="4" Description="Sliced Tomato on a bed of Mixed Green."/>
+            <Recipe Name="House Salad" Price="7" Description="Canadian Bacon, Fresh Tomato, Green Pepper, Cheddar on a bed of Mixed Greens. Side of Pita Bread."/>
+            <Recipe Name="Greek Salad" Price="8" Description="Kalamata Olives, Onion, Pepperoncini Pepper, Fresh Tomato, Feta served on a bed of Mixed Greens. Side of Pita Bread. Side of our homemade Greek Dressing."/>
+            <Recipe Name="Bacon Chicken Ranch Salad" Price="8.5" Description="Fresh Tomato, Green Pepper, Cheddar, Pepperoncini Pepper, Precooked Bacon on a bed of Mixed Greens, and topped with Grilled Chicken."/>
+            <Recipe Name="Taco Salad" Price="7.5" Description="Sliced Tomato on a bed of Mixed Green."/>
+        </Category>
+        <Category Name="Sandwiches">
+            <Recipe Name="BBQ Chicken" Price="8" Description="Lightly toasted hoagie bun filled with our blend of Grilled Chicken and BBQ Sauce and topped with Mozzarella Cheese."/>
+            <Recipe Name="BLT Sandwich" Price="7.5" Description="Bacon, Lettuce and Tomato between two Grilled Pita Breads. Dab of Mayonnaise. "/>
+            <Recipe Name="Turkey Sub" Price="8" Description="Lightly toasted Hoagie Bun topped with Turkey, Mozzarella, Lettuce, Fresh Tomato and Mayonnaise."/>
+            <Recipe Name="Gyro" Price="7.5" Description="Blend of 85% Beef and 15% Lamb , seared and served on Pita Bread. Topped with Onion, Fresh Tomato and our Homemade Tzatziki Sauce."/>
+        </Category>
+        <Category Name="Desserts"/>
+    </Menu>
+</Restaurant>

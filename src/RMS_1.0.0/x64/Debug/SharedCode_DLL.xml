@@ -1,0 +1,1038 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        "SharedCode_DLL"
+    </assembly>
+    <members>
+        <member name="M:SharedCode.RemoveOrderItem.Dispose">
+            <summary>
+Destroys the reference to item since we don't need it fam.
+</summary>
+        </member>
+        <member name="M:SharedCode.RemoveOrderItem.Revert">
+            <summary>
+Reverts the effects of the command on the receiver.s
+</summary>
+        </member>
+        <member name="M:SharedCode.RemoveOrderItem.Execute">
+            <summary>
+Executes the command on the receiver.
+</summary>
+        </member>
+        <member name="M:SharedCode.RemoveOrderItem.#ctor(SharedCode.Order*,SharedCode.OrderItem*)">
+            <summary>
+Creates a RemoveOrderItem command object with the specified order and
+item to remove.
+</summary>
+            <param name="order">The order to delete the item from.</param>
+            <param name="orderItem">The item to delete from the order.</param>
+        </member>
+        <member name="M:SharedCode.Printer.CatalogDigitallyReceipt(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;,System.Int32!System.Runtime.CompilerServices.IsLong)">
+            <summary>
+Process a Receipt to be printed and has it catalog digitally.
+</summary>
+            <param name="id">The idnumber as an integer</param>
+            <param name="str">Item to be printed as an std::string</param>
+            <returns>True if the receipt printed sucessfully.</returns>
+        </member>
+        <member name="M:SharedCode.Printer.Dispose">
+            <summary>
+Deconstructor for the printer class. Does nothing.
+</summary>
+        </member>
+        <member name="M:SharedCode.Printer.#ctor">
+            <summary>
+Default constructor for the printer class. Does nothing.
+</summary>
+        </member>
+        <member name="T:SharedCode.Printer">
+            <summary>
+Printer class that allows for items to be printed.
+</summary>
+        </member>
+        <member name="F:SharedCode.Restaurant.reservationController">
+            <summary>
+The main time clock controller, this will be used for employee clock-in
+and employee clock-out.
+</summary>
+            <summary>
+The main reservation controller, this will be used to store reservations.
+</summary>
+        </member>
+        <member name="F:SharedCode.Restaurant.tableController">
+            <summary>
+The main table controller, all table for the restaurant will reside in here. 
+</summary>
+        </member>
+        <member name="F:SharedCode.Restaurant.restaurantMenu">
+            <summary>
+This holds a the restaurant's menu, which contains cateogires, which 
+contain the actual recipes for the restaurant. 
+</summary>
+        </member>
+        <member name="F:SharedCode.Restaurant.drinkController">
+            <summary>
+The main order controller, all orders for the restaurant will reside in here. 
+</summary>
+        </member>
+        <member name="F:SharedCode.Restaurant.orderController">
+            <summary>
+The main order controller, all orders for the restaurant will reside in here. 
+</summary>
+        </member>
+        <member name="F:SharedCode.Restaurant.phone">
+            <summary>
+The Phone number of the restaurant.
+</summary>
+        </member>
+        <member name="F:SharedCode.Restaurant.address">
+            <summary>
+The address of the restaurant.
+</summary>
+        </member>
+        <member name="F:SharedCode.Restaurant.name">
+            <summary>
+The name of the restaurant.
+</summary>
+        </member>
+        <member name="M:SharedCode.Restaurant.Dispose">
+            <summary>
+Deletes all restaurant data from memories.
+</summary>
+        </member>
+        <member name="M:SharedCode.Restaurant.getRestaurantMenu">
+            <summary>
+Gets a reference to the current restaurant menu.
+</summary>
+            <returns>The current restaurant menu</returns>
+        </member>
+        <member name="M:SharedCode.Restaurant.getReservationController">
+            <summary>
+Gets the current reservation controller.
+</summary>
+            <returns>The current reservation controller.</returns>
+        </member>
+        <member name="M:SharedCode.Restaurant.getOrderController">
+            <summary>
+Gets the current order controller.
+</summary>
+            <returns>The current order controller.</returns>
+        </member>
+        <member name="M:SharedCode.Restaurant.getTableController">
+            <summary>
+Gets the current table controller. 
+</summary>
+            <returns>Current table controller.</returns>
+        </member>
+        <member name="M:SharedCode.Restaurant.LoadMenuW">
+            <summary>
+Loads the menu from the default location.
+</summary>
+        </member>
+        <member name="M:SharedCode.Restaurant.SaveMenu">
+            <summary>
+Saves the current menu to the current database location.
+</summary>
+        </member>
+        <member name="F:SharedCode.Restaurant.DatabaseLocation">
+            <summary>
+String to the location of the database file. 
+</summary>
+        </member>
+        <member name="M:SharedCode.Restaurant.#ctor">
+            <summary>
+Initializes all the restaurant controllers to manage the main restaurant
+functions.
+</summary>
+        </member>
+        <member name="M:SharedCode.Restaurant.GetRestaurant">
+            <summary>
+Holds one Restaurant object per running instance of the management 
+system. This will be shared between all UI components.
+</summary>
+            <returns>Look above...</returns>
+        </member>
+        <member name="F:SharedCode.Restaurant.instance">
+            <summary>
+Static reference to an instance of a restaurnat. Each program using 
+this DLL should only be working with one restaurant instance at a
+time.
+</summary>
+        </member>
+        <member name="T:SharedCode.Restaurant">
+            <summary>
+Class which holds all data necessary to run a restaurant.
+</summary>
+        </member>
+        <member name="F:SharedCode.RestaurantMenu.categories">
+            <summary>
+Contains the categories for the restaurant menu.
+</summary>
+        </member>
+        <member name="M:SharedCode.RestaurantMenu.numCategories">
+            <summary>
+Returns the number of categories in the menu
+</summary>
+            <returns>Size of the Category vector.</returns>
+        </member>
+        <member name="M:SharedCode.RestaurantMenu.FindRecipe(SharedCode.Recipe*)">
+            <summary>
+Searches the whole Restaurant Menu for a recipe which meets the 
+equivalence criteria for recipes. 
+</summary>
+            <param name="skeletonRecipe">The recipe to search for.</param>
+            <returns>A pointer to the recipe object if found, nullptr if not.</returns>
+        </member>
+        <member name="M:SharedCode.RestaurantMenu.FindRecipe(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;)">
+            <summary>
+Returns a Recipe object if one is found that matches the given recipe name.
+</summary>
+            <param name="recipeName">The name of the recipe to search for.</param>
+            <returns>A Recipe object if found, nullptr if not.</returns>
+        </member>
+        <member name="M:SharedCode.RestaurantMenu.HasCategory(SharedCode.MenuCategory*)">
+            <summary>
+Returns true if the Restaurant Menu contains a category which meets
+the equivalence criteria for categories.
+</summary>
+            <param name="skeletonCategory">The skeleton category to check for.</param>
+            <returns>True if the menu has the skeleton category, false if not.</returns>
+        </member>
+        <member name="M:SharedCode.RestaurantMenu.CategoryCount">
+            <summary>
+Gets the number of menu categories in the current menu.
+</summary>
+            <returns>Number of categories.</returns>
+        </member>
+        <member name="M:SharedCode.RestaurantMenu.LastCategory">
+            <summary>
+Get an iterator the Categories list.
+</summary>
+            <returns>Constant iterator the list of menu categories.</returns>
+        </member>
+        <member name="M:SharedCode.RestaurantMenu.FirstCategory">
+            <summary>
+Get an iterator the Categories list.
+</summary>
+            <returns>Constant iterator the list of menu categories.</returns>
+        </member>
+        <member name="M:SharedCode.RestaurantMenu.RemoveCategory(SharedCode.MenuCategory*)">
+            <summary>
+Removes a given category from the Restaurant Menu.
+</summary>
+            <param name="categoryToRemove">Category to remove.</param>
+        </member>
+        <member name="M:SharedCode.RestaurantMenu.FindCategory(SharedCode.MenuCategory*)">
+            <summary>
+Find a category based off of a skeleton cateogory object.
+</summary>
+            <param name="skeletonCategory">The skeleton cateogry containing the necessary info to match the categories.</param>
+            <returns>The category object or null if it's not found.</returns>
+        </member>
+        <member name="M:SharedCode.RestaurantMenu.FindCategory(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;)">
+            <summary>
+Get a category by name.
+</summary>
+            <param name="name">Name of the category to get.</param>
+            <returns>Null if the category isn't found, Reference to the 
+category object if it is found.</returns>
+        </member>
+        <member name="M:SharedCode.RestaurantMenu.AddCategory(SharedCode.MenuCategory*)">
+            <summary>
+Add a category to the RestaurantMenu.
+The Restauarant Menu will then be responsible for deleting the 
+category object when it is no longer needed. The categories
+should only be deleted via the RestaurantMenu object and no
+category should be shared (by reference) between two menu objects.
+</summary>
+            <param name="category">The category to add to the menu.</param>
+        </member>
+        <member name="M:SharedCode.RestaurantMenu.Dispose">
+            <summary>
+Destructs a Restaurant Menu.
+</summary>
+        </member>
+        <member name="M:SharedCode.RestaurantMenu.#ctor">
+            <summary>
+Creates a new restaurant menu object which does not have any categories.
+</summary>
+        </member>
+        <member name="M:SharedCode.RestaurantMenu.ExportMenu(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;,SharedCode.RestaurantMenu*)">
+            <summary>
+Export a Restaurant menu to a given XML file path.
+</summary>
+            <param name="filePath">Local path to export to.</param>
+            <param name="menu">The menu to export.</param>
+            <returns>True/False if the export succeeds/fails</returns>
+        </member>
+        <member name="M:SharedCode.RestaurantMenu.ImportMenu(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;)">
+            <summary>
+Import a Restaurant menu from the given XML file.
+</summary>
+            <param name="filePath">Local path to the menu to import.</param>
+            <returns>The imported menu</returns>
+        </member>
+        <member name="D:SharedCode.RestaurantMenu.CategoryIterator">
+            <summary>
+Iterator type for the CategoryContainer
+</summary>
+        </member>
+        <member name="D:SharedCode.RestaurantMenu.CategoryContainer">
+            <summary>
+Typedef for the container of Menu categories.
+</summary>
+        </member>
+        <member name="F:SharedCode.MenuCategory.recipes">
+            <summary>
+The recipes that are in the MenuCategory
+</summary>
+        </member>
+        <member name="F:SharedCode.MenuCategory.name">
+            <summary>
+A pointer to the name of the category
+</summary>
+        </member>
+        <member name="M:SharedCode.MenuCategory.numRecipes">
+            <summary>
+Returns the number of recipes in the category
+</summary>
+            <returns>Size of the recipes vector.</returns>
+        </member>
+        <member name="M:SharedCode.MenuCategory.op_Equality(SharedCode.MenuCategory*)">
+            <summary>
+Compares two menu categories by name.
+</summary>
+            <param name="category">The category to compare to.</param>
+            <returns>True if the names match, false if not.</returns>
+        </member>
+        <member name="M:SharedCode.MenuCategory.HasRecipe(SharedCode.Recipe*)">
+            <summary>
+Searches and sees if the current category has a recipe which meets
+the recipe equivalance critera for the sekelton recipe.
+</summary>
+            <param name="skeletonRecipe">The skeleton recipe to match against the recipes in this category.</param>
+            <returns>True if the category has the recipe, false if not.</returns>
+        </member>
+        <member name="M:SharedCode.MenuCategory.FindRecipe(SharedCode.Recipe*)">
+            <summary>
+Searches for a recipe in this category which meets the equivalence
+criteria with the given skeleton recipe.
+</summary>
+            <param name="skeletonRecipe">The skeleton recipe to use while searching.</param>
+            <returns>The recipe if it is found in the category, nullptr if it isn't found</returns>
+        </member>
+        <member name="M:SharedCode.MenuCategory.FindRecipe(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;)">
+            <summary>
+Uses the FindRecipe(Recipe * skeletonRecipe) function to find a 
+recipe by name.
+</summary>
+            <param name="recipeName">Name of the recipe to search for.</param>
+            <returns>The recipe object if it exists, nullptr if not.</returns>
+        </member>
+        <member name="M:SharedCode.MenuCategory.AddRecipe(SharedCode.Recipe*)">
+            <summary>
+Adds a recipe to the category. 
+The category will be responsible for deleting the recipe when it is 
+no longer needed.
+</summary>
+            <param name="recipe">The recipe to add to the category.</param>
+        </member>
+        <member name="M:SharedCode.MenuCategory.LastRecipe">
+            <summary>
+Returns an iterator to the list of Recipes that are in this category.
+</summary>
+            <returns>Constant iterator to the beginning of the recipes.</returns>
+        </member>
+        <member name="M:SharedCode.MenuCategory.FirstRecipe">
+            <summary>
+Returns an iterator to the list of Recipes that are in this category.
+</summary>
+            <returns>Constant iterator to the beginning of the recipes.</returns>
+        </member>
+        <member name="M:SharedCode.MenuCategory.Name(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;*)">
+            <summary>
+Returns the Name of the Restaurant Category.
+</summary>
+            <returns>String containing the name of the Restaurant Category</returns>
+        </member>
+        <member name="M:SharedCode.MenuCategory.Name">
+            <summary>
+Returns the Name of the Restaurant Category.
+</summary>
+            <returns>String containing the name of the Restaurant Category</returns>
+        </member>
+        <member name="M:SharedCode.MenuCategory.Dispose">
+            <summary>
+Destructs a MenuCategory.
+</summary>
+        </member>
+        <member name="M:SharedCode.MenuCategory.#ctor(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;*)">
+            <summary>
+Creates a menu category with the given name.
+</summary>
+            <param name="name">The name of the category to create. 
+The category will own this string object and will delete it once it 
+is no longer needed.</param>
+        </member>
+        <member name="M:SharedCode.MenuCategory.#ctor(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;)">
+            <summary>
+Creats a new menu category with the srtring as it's name.
+</summary>
+            <param name="name">The name to give the category.</param>
+        </member>
+        <member name="M:SharedCode.MenuCategory.#ctor">
+            <summary>
+Creates a new menu category with a blank name.
+</summary>
+        </member>
+        <member name="D:SharedCode.MenuCategory.RecipeIterator">
+            <summary>
+An iterator to the RecipeContainer.
+</summary>
+        </member>
+        <member name="D:SharedCode.MenuCategory.RecipeContainer">
+            <summary>
+A container to hold all of the recipes in the cateogry.
+</summary>
+        </member>
+        <member name="T:SharedCode.MenuCategory">
+            <summary>
+Represents a Category of menu items. 
+Such as Sandwiches, Wraps, Fish, etc.
+</summary>
+        </member>
+        <member name="F:SharedCode.OrderController.revertedCommands">
+            <summary>
+The stack to hold all of the reverted order commands.
+</summary>
+        </member>
+        <member name="F:SharedCode.OrderController.executedCommands">
+            <summary>
+The stack to hold all the executed order commands.
+</summary>
+        </member>
+        <member name="F:SharedCode.OrderController.numOrders">
+            <summary>
+The number of orders.
+</summary>
+        </member>
+        <member name="M:SharedCode.OrderController.GetNextID">
+            <summary>
+Gets the order id for the new order
+</summary>
+            <returns>New order id</returns>
+        </member>
+        <member name="F:SharedCode.OrderController.orderList">
+            <summary>
+A vector to hold all the orders
+</summary>
+        </member>
+        <member name="M:SharedCode.OrderController.RedoCommand">
+            <summary>
+Redoes the command at the top of the redo stack.
+</summary>
+        </member>
+        <member name="M:SharedCode.OrderController.UndoCommand">
+            <summary>
+Undoes the command at the top of the undo stack.
+</summary>
+        </member>
+        <member name="M:SharedCode.OrderController.ExecuteCommand(SharedCode.OrderCommand*)">
+            <summary>
+Executes the given command and adds it to the undo/redo stack.
+</summary>
+            <param name="command">An OrderCommand to execute.</param>
+        </member>
+        <member name="M:SharedCode.OrderController.OrderAt(System.Int32)">
+            <summary>
+gets order at index
+</summary>
+        </member>
+        <member name="M:SharedCode.OrderController.getOrders">
+            <summary>
+Used to get the entire list of orders
+</summary>
+            <returns>The list of all tables.</returns>
+        </member>
+        <member name="M:SharedCode.OrderController.CreateOrder">
+            <summary>
+Creates a blank order to manipulate.
+</summary>
+            <returns />
+        </member>
+        <member name="M:SharedCode.OrderController.CompleteOrder(SharedCode.Order*)">
+            <summary>
+Marks an order complete.
+</summary>
+            <param name="order">The order to mark complete</param>
+        </member>
+        <member name="M:SharedCode.OrderController.DeleteOrder(SharedCode.Order**!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>
+Deletes the order if it is found in the order controller. The function
+will return true if the order is deleted, and the order parameter that
+is passed in will be set to null. 
+</summary>
+            <param name="order">The order to delete from the order controller.</param>
+            <returns>True if order is deleted, false if not.</returns>
+        </member>
+        <member name="M:SharedCode.OrderController.Dispose">
+            <summary>
+Delete method.
+</summary>
+        </member>
+        <member name="M:SharedCode.OrderController.#ctor">
+            <summary>
+ Default constructor for a OrderController object.
+</summary>
+        </member>
+        <member name="D:SharedCode.OrderController.OrderCommandStack">
+            <summary>
+Stack container to hold OrderCommands
+</summary>
+        </member>
+        <member name="D:SharedCode.OrderController.OrderContainer">
+            <summary>
+Container class to hold orders.
+</summary>
+        </member>
+        <member name="T:SharedCode.OrderController">
+            <summary>
+A controller which is used to manage the orders currently open or closed
+in the restaurant. 
+</summary>
+        </member>
+        <member name="F:SharedCode.ReservationController.resList">
+            <summary>
+List of the Reservations
+</summary>
+        </member>
+        <member name="M:SharedCode.ReservationController.GetReservationAt(System.Int32)">
+            <summary>
+Returns a reservation at the index
+</summary>
+            <param name="index">the index in resList</param>
+            <returns>The reservation at index</returns>
+        </member>
+        <member name="M:SharedCode.ReservationController.NumReservations">
+            <summary>
+Returns the number of Reservations
+</summary>
+            <returns>int number of Reservations</returns>
+        </member>
+        <member name="M:SharedCode.ReservationController.CreateReservation">
+            <summary>
+Adds a generic Reservation
+</summary>
+            <returns>The created Object</returns>
+        </member>
+        <member name="M:SharedCode.ReservationController.CreateReservation(System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte*,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte*,System.Boolean)">
+            <summary>
+Adds a reservation to the list
+</summary>
+            <param name="name">String of guest name</param>
+            <param name="time">String of time</param>
+            <returns>The created object</returns>
+        </member>
+        <member name="M:SharedCode.ReservationController.RemoveReservation(System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte*)">
+            <summary>
+Removes a Reservation from the list
+</summary>
+            <param name="res">Reservation name</param>
+            <returns>If it was removed</returns>
+        </member>
+        <member name="M:SharedCode.ReservationController.Dispose">
+            <summary>
+Destructor for ReservationController
+</summary>
+        </member>
+        <member name="M:SharedCode.ReservationController.#ctor">
+            <summary>
+Default Constructor
+</summary>
+        </member>
+        <member name="F:SharedCode.TableController.numTables">
+            <summary>
+The number of tables.
+</summary>
+        </member>
+        <member name="F:SharedCode.TableController.tables">
+            <summary>
+The list of tables.
+</summary>
+        </member>
+        <member name="M:SharedCode.TableController.getTables">
+            <summary>
+Used to get the entire list of tables
+</summary>
+            <returns>The list of all tables.</returns>
+        </member>
+        <member name="M:SharedCode.TableController.CreateTable(System.Int32)">
+            <summary>
+Creates a new table at the end of the TableController
+and increments numTables
+</summary>
+            <param>The capacity of the table</param>
+            <returns>The table that was created</returns>
+        </member>
+        <member name="M:SharedCode.TableController.CreateTable">
+            <summary>
+Creates a new table at the end of the TableController
+and increments numTables
+</summary>
+            <returns>The table that was created</returns>
+        </member>
+        <member name="M:SharedCode.TableController.GetTable(System.Int32)">
+            <summary>
+Returns the table at the selected index
+</summary>
+            <param name="i">The index of the table</param>
+            <returns>The table object at index i</returns>
+        </member>
+        <member name="M:SharedCode.TableController.SeatTable(SharedCode.Table*,SharedCode.Reservation*)">
+            <summary>
+Marks the table as seated so no new parties can be seated there.
+</summary>
+            <param name="table">The Table that is being marked as seated</param>
+            <param name="reservation">The reservation on that table</param>
+            <returns>If the table was seated or not</returns>
+        </member>
+        <member name="M:SharedCode.TableController.Dispose">
+            <summary>
+Destructor
+</summary>
+        </member>
+        <member name="M:SharedCode.TableController.#ctor">
+            <summary>
+Default Constructor for TableController Class
+</summary>
+        </member>
+        <member name="M:SharedCode.Receipt.RoundValue(System.Double)">
+            <summary>
+Rounds a double numerical value.
+<param name="d">A decimal value to be rounded 
+to the nearest hundreth</param><returns>A rounded double value to the nearest hundreth</returns></summary>
+        </member>
+        <member name="M:SharedCode.Receipt.To_String_Bill(System.Double)">
+            <summary>
+Converts a numerical double value into a std string.
+<param name="f">Converts a decimal value into a std::string</param><returns>A std::string of a double value.</returns></summary>
+        </member>
+        <member name="M:SharedCode.Receipt.ExcellentServiceTip(System.Double)">
+            <summary>
+Returns a numerical double value of a 20% tip.
+<param name="cost">Value to apply tip.</param><returns>Double value of a value applied with the tip value.</returns></summary>
+        </member>
+        <member name="M:SharedCode.Receipt.GoodServiceTip(System.Double)">
+            <summary>
+Returns a numerical double value of a 15% tip.
+<param name="cost">Value to apply tip.</param><returns>Double value of a value applied with the tip value.</returns></summary>
+        </member>
+        <member name="M:SharedCode.Receipt.PoorServiceTip(System.Double)">
+            <summary>
+Returns a numerical double value of a 10% tip.
+<param name="cost">Value to apply tip.</param><returns>Double value of a value applied with the tip value.</returns></summary>
+        </member>
+        <member name="M:SharedCode.Receipt.FormatReceipt(SharedCode.Order*)">
+            <summary>
+Formats a receipt.
+<param name="order">Order object to be formatted.</param><returns>A std::string of a formatted receipt.</returns></summary>
+        </member>
+        <member name="M:SharedCode.Receipt.CalculateTips(System.Double)">
+            <summary>
+Calculates the tips for a bill.
+<param name="cost">Value to apply tips.</param><returns>A formatted std::string of the tip values.</returns></summary>
+        </member>
+        <member name="M:SharedCode.Receipt.Dispose">
+            <summary>
+Deconstructor for a receipt object.
+</summary>
+        </member>
+        <member name="M:SharedCode.Receipt.#ctor">
+            <summary>
+Default constructor for a receipt object.
+</summary>
+        </member>
+        <member name="M:SharedCode.AddOrderItem.Revert">
+            <summary>
+Reverts the effects of the command on the receiver.s
+</summary>
+        </member>
+        <member name="M:SharedCode.AddOrderItem.Execute">
+            <summary>
+Executes the command on the receiver.
+</summary>
+        </member>
+        <member name="M:SharedCode.AddOrderItem.Dispose">
+            <summary>
+Deletes any local memory.
+</summary>
+        </member>
+        <member name="M:SharedCode.AddOrderItem.#ctor(SharedCode.Order*,SharedCode.OrderItem*)">
+            <summary>
+Creates an AddOrderItem command object with the specified order and
+item to remove.
+</summary>
+            <param name="order">The order to add the item to.</param>
+            <param name="orderItem">The item to add to the order.</param>
+        </member>
+        <member name="M:SharedCode.OrderCommand.Revert">
+            <summary>
+Reverts the effects of the command on the receiver.s
+</summary>
+        </member>
+        <member name="M:SharedCode.OrderCommand.Execute">
+            <summary>
+Executes the command on the receiver.
+</summary>
+        </member>
+        <member name="F:SharedCode.Order.items">
+            <summary>
+Searches a vector of items for a particular order item.
+</summary>
+        </member>
+        <member name="F:SharedCode.Order.orderID">
+            <summary>
+ID of the current order
+</summary>
+        </member>
+        <member name="F:SharedCode.Order.status">
+            <summary>
+An enum defining what state the order is currently in.
+</summary>
+        </member>
+        <member name="M:SharedCode.Order.GetTotalOrderCost">
+            <summary>
+Retruns the order total.
+</summary>
+            <returns>The numerical value of an order.</returns>
+        </member>
+        <member name="M:SharedCode.Order.ClearItems">
+            <summary>
+Clears all of the order items from the order.
+</summary>
+        </member>
+        <member name="M:SharedCode.Order.Items">
+            <summary>
+Returns a constant vector of all the order items. 
+</summary>
+            <returns>Constant vector of all the order items.</returns>
+        </member>
+        <member name="M:SharedCode.Order.RemoveItem(SharedCode.OrderItem**!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>
+Removes an order item from an order.
+</summary>
+            <param name="item">The order item to remove.</param>
+        </member>
+        <member name="M:SharedCode.Order.AddItem(SharedCode.OrderItem*)">
+            <summary>
+Adds an order item to the order.
+</summary>
+            <param name="item">The order item to add.</param>
+        </member>
+        <member name="M:SharedCode.Order.SetOrderState(System.Boolean)">
+            <summary>
+Sets the order state of this order
+</summary>
+            <param name="complete">A boolean representation of the orders state.</param>
+        </member>
+        <member name="M:SharedCode.Order.GetOrderState">
+            <summary>
+Retruns the order state of this order.
+</summary>
+            <returns>The order state</returns>
+        </member>
+        <member name="M:SharedCode.Order.GetID">
+            <summary>
+Returns the ID of the order.
+</summary>
+            <returns>Int representation of the order.</returns>
+        </member>
+        <member name="M:SharedCode.Order.Dispose">
+            <summary>
+Deconstructor, deletes the order and table 
+associated with the order.
+</summary>
+        </member>
+        <member name="M:SharedCode.Order.#ctor(System.Int32)">
+            <summary>
+Creates an order item based on user 
+submitted information.
+</summary>
+            <param name="id">The idnumber as an int</param>
+        </member>
+        <member name="M:SharedCode.Order.#ctor">
+            <summary>
+The Default contstructor of an order item.
+</summary>
+        </member>
+        <member name="D:SharedCode.Order.OrderItemIterator">
+            <summary>
+Iterator for the order items.
+</summary>
+        </member>
+        <member name="D:SharedCode.Order.OrderItemContainer">
+            <summary>
+Vector of order item pointers
+</summary>
+        </member>
+        <member name="F:SharedCode.OrderItem.recipe">
+            <summary>
+The recipe for the order item.
+</summary>
+        </member>
+        <member name="F:SharedCode.OrderItem.customizations">
+            <summary>
+A string containing a list of customizations for the order.
+</summary>
+        </member>
+        <member name="M:SharedCode.OrderItem.RemoveCustomization(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;*)">
+            <summary>
+Removes a custimization option selected from the order item.
+</summary>
+        </member>
+        <member name="M:SharedCode.OrderItem.AddCustomization(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;*)">
+            <summary>
+Adds a custimization option selected from the order item.
+</summary>
+        </member>
+        <member name="M:SharedCode.OrderItem.GetRecipe">
+            <summary>
+Returns a string representation of the order items name.
+</summary>
+            <returns>A string representation of the order item.</returns>
+        </member>
+        <member name="M:SharedCode.OrderItem.GetCustomizations">
+            <summary>
+Returns the customization string for the OrderItem. 
+
+This is still owned by the OrderItem so do not delete the string, it 
+will be deleted when the OrderItem is deleted. 
+</summary>
+            <returns>String containing all the customizations.</returns>
+        </member>
+        <member name="M:SharedCode.OrderItem.Dispose">
+            <summary>
+Deletes the customizations string so we don't have memory leaks.
+</summary>
+        </member>
+        <member name="M:SharedCode.OrderItem.#ctor(SharedCode.Recipe*)">
+            <summary>
+Creates a new order item. The order item will "own" the customizations
+string and delete it when it is deleted. The recipe should be a pointer
+from the restaurant menu, it will be used to provide the name .
+</summary>
+            <param name="item">A string with the name of a specific item.</param>
+        </member>
+        <member name="F:SharedCode.Recipe.description">
+            <summary>
+The description of the recipe.
+</summary>
+        </member>
+        <member name="F:SharedCode.Recipe.price">
+            <summary>
+The price of the recipe.
+</summary>
+        </member>
+        <member name="F:SharedCode.Recipe.name">
+            <summary>
+The name of the recipe.
+</summary>
+        </member>
+        <member name="M:SharedCode.Recipe.op_Equality(SharedCode.Recipe!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>
+Compares two recipes and returns true if their names are equal.
+</summary>
+            <param name="recipe">The recipe to compare to.</param>
+            <returns>True if hte names match, false if not.</returns>
+        </member>
+        <member name="M:SharedCode.Recipe.op_Equality(SharedCode.Recipe*)">
+            <summary>
+Compares two recipes and returns true if their names are equal.
+</summary>
+            <param name="recipe">The recipe to compare to.</param>
+            <returns>True if hte names match, false if not.</returns>
+        </member>
+        <member name="M:SharedCode.Recipe.Price(System.Single)">
+            <summary>
+Sets the price of the recipe.
+</summary>
+            <param name="newPrice">The new price for the recipe</param>
+        </member>
+        <member name="M:SharedCode.Recipe.Price">
+            <summary>
+Get the price of the recipe.
+</summary>
+            <returns>The price of the recipe.</returns>
+        </member>
+        <member name="M:SharedCode.Recipe.Description(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;*)">
+            <summary>
+Sets the description of the recipe.
+</summary>
+            <param name="newDescription">The new description for the recipe</param>
+        </member>
+        <member name="M:SharedCode.Recipe.Description">
+            <summary>
+Gets the description of the recipe.
+</summary>
+            <returns>String pointer to the description of the recipe.</returns>
+        </member>
+        <member name="M:SharedCode.Recipe.Name(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;*)">
+            <summary>
+Update the name of the recipe.
+</summary>
+            <param name="newName">Pointer to the new name string</param>
+        </member>
+        <member name="M:SharedCode.Recipe.Name">
+            <summary>
+Returns the pointer to the Recipe's name string.
+   /// This string is owned by the recipe and should not be deleted, 
+it will be deleted inside the destructor of Recipe.
+</summary>
+            <returns>Pointer to the recipe's name string</returns>
+        </member>
+        <member name="M:SharedCode.Recipe.Dispose">
+            <summary>
+Destruct a recipe object.
+</summary>
+        </member>
+        <member name="M:SharedCode.Recipe.#ctor(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;*,System.Single,std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;*)">
+            <summary>
+Creates a recipe with the specified name, price, and description.
+</summary>
+        </member>
+        <member name="M:SharedCode.Recipe.#ctor(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;*)">
+            <summary>
+Creates a recipe with the specified recipe name.
+</summary>
+        </member>
+        <member name="M:SharedCode.Recipe.#ctor(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;)">
+            <summary>
+Createsa new recipe using a string value as it's name. 
+</summary>
+        </member>
+        <member name="M:SharedCode.Recipe.#ctor">
+            <summary>
+Create a new Recipe object.
+</summary>
+        </member>
+        <member name="F:SharedCode.Table.orderID">
+            <summary>
+ID of order associated with the table
+</summary>
+        </member>
+        <member name="F:SharedCode.Table.vacant">
+            <summary>
+Is the table vacent?
+</summary>
+        </member>
+        <member name="F:SharedCode.Table.capacity">
+            <summary>
+Number of seats at table
+</summary>
+        </member>
+        <member name="F:SharedCode.Table.tableNum">
+            <summary>
+Table ID
+</summary>
+        </member>
+        <member name="M:SharedCode.Table.UpdateOrderID(System.Int32)">
+            <summary>
+updates order id
+<param name="id">new order id</param></summary>
+        </member>
+        <member name="M:SharedCode.Table.OrderID">
+            <summary>
+returns an int that represents order ID
+<returns> orderID </returns></summary>
+        </member>
+        <member name="M:SharedCode.Table.RemoveReservation">
+            <summary>
+Removes the reservation.
+</summary>
+        </member>
+        <member name="F:SharedCode.Table.reservation">
+            <summary>
+Reservation associated with the table.
+</summary>
+        </member>
+        <member name="M:SharedCode.Table.ReservationName">
+            <summary>
+Returns the reservation holders name.
+</summary>
+            <returns>A char* of Reservation-&gt;name</returns>
+        </member>
+        <member name="M:SharedCode.Table.GetReservationTime">
+            <summary>
+Returns this Tables Reservation
+</summary>
+            <returns>A char* representation of the Reservation</returns>
+        </member>
+        <member name="M:SharedCode.Table.UpdateReservation(SharedCode.Reservation*)">
+            <summary>
+Updates the current reservation
+</summary>
+            <param name="res">The new Reservation for the Table.</param>
+            <returns>If the update was sucessful</returns>
+        </member>
+        <member name="M:SharedCode.Table.Vacant">
+            <summary>
+Returns if the Table is vacant.
+</summary>
+            <returns>True if vacant, false if not.</returns>
+        </member>
+        <member name="M:SharedCode.Table.Capacity">
+            <summary>
+Get the current capactiy of the table.
+</summary>
+            <returns>The capacity of the table (number of chairs).</returns>
+        </member>
+        <member name="M:SharedCode.Table.GetTableNum">
+            <summary>
+Returns the table number
+</summary>
+            <returns>tableNum</returns>
+        </member>
+        <member name="F:SharedCode.Reservation.name">
+            <summary>
+Name Associated with this Reservation.
+</summary>
+        </member>
+        <member name="F:SharedCode.Reservation.charTime">
+            <summary>
+char* representation of the time_t time
+</summary>
+        </member>
+        <member name="M:SharedCode.Reservation.Time">
+            <summary>
+Returns the time on the reservation.
+</summary>
+            <returns>charTime</returns>
+        </member>
+        <member name="M:SharedCode.Reservation.Name">
+            <summary>
+Returns the name on the reservation.
+</summary>
+            <returns>name</returns>
+        </member>
+        <member name="M:SharedCode.Reservation.Dispose">
+            <summary>
+Destructor for Reservation.
+</summary>
+        </member>
+        <member name="M:SharedCode.Reservation.#ctor">
+            <summary>
+Default Constructor for Reservation.
+</summary>
+        </member>
+        <member name="M:SharedCode.Command.Revert">
+            <summary>
+Reverts the effects of the command on the receiver.s
+</summary>
+        </member>
+        <member name="M:SharedCode.Command.Execute">
+            <summary>
+Executes the command on the receiver.
+</summary>
+        </member>
+    </members>
+</doc>

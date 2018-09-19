@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Chef.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CloseCash.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HostScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NavScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RestaurantMenuEditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ServerClose.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ServerMain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WaitStaffScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CloseSplash.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DeleteOrderItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="NavScreen.h" />
+    <ClInclude Include="RestaurantMenuEditor.h" />
+    <ClInclude Include="ServerMain.h" />
+    <ClInclude Include="HostScreen.h" />
+    <ClInclude Include="ServerClose.h" />
+    <ClInclude Include="CloseCash.h" />
+    <ClInclude Include="WaitStaffScreen.h" />
+    <ClInclude Include="Chef.h" />
+    <ClInclude Include="CloseSplash.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Chef.resx" />
+    <EmbeddedResource Include="NavScreen.resx" />
+    <EmbeddedResource Include="RestaurantMenuEditor.resx" />
+    <EmbeddedResource Include="ServerMain.resx" />
+    <EmbeddedResource Include="HostScreen.resx" />
+    <EmbeddedResource Include="ServerClose.resx" />
+    <EmbeddedResource Include="CloseCash.resx" />
+    <EmbeddedResource Include="WaitStaffScreen.resx" />
+    <EmbeddedResource Include="CloseSplash.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{1120849e-de29-494f-846e-fd94685c4556}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{099d4759-8c63-42fb-b058-553c4ee427cd}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram11.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="db.xml" />
+  </ItemGroup>
+</Project>

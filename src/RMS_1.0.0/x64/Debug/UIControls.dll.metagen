@@ -1,0 +1,55 @@
+  UIControls.HostTableGUI.resources - Embedded, ContainedInManifestFile, 
+  UIControls.HostTableGUI_V2.resources - Embedded, ContainedInManifestFile, 
+  UIControls.OrderItemGUI.resources - Embedded, ContainedInManifestFile, 
+  UIControls.ServerTableGUI.resources - Embedded, ContainedInManifestFile, 
+  UIControls.TableGUI.resources - Embedded, ContainedInManifestFile, 
+ImageRuntimeVersion: v4.0.30319
+Assembly UIControls, Version=1.0.*, Culture=Invariant Language (Invariant Country): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class UIControls.HostTableGUI: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class UIControls.HostTableGUI_V2: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(Int32, System.EventHandler): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Int32, System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    SharedCode.Table* table : Public
+    System.Windows.Forms.Form form : Public
+    System.Windows.Forms.Button btnSeat : Public
+  Methods:
+    button1_Click(Object, EventArgs): PrivateScope, Public, HideBySig
+    update(): PrivateScope, Public, HideBySig
+Class UIControls.OrderItemGUI: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(SharedCode.Order*): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    SharedCode.Order* myOrder : Public
+    Int32 ID : Public
+Class UIControls.ServerTableGUI: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(Int32, System.EventHandler, System.EventHandler, System.EventHandler): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 tableID : Public
+    Int32 orderID : Public
+Class UIControls.TableGUI: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
